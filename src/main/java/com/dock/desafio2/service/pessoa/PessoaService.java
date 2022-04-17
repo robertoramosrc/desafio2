@@ -17,4 +17,8 @@ public class PessoaService {
         return pessoaRepository.buscarPessoas();
     }
 
+    public PessoaBO buscarPessoaPeloId(Integer id){
+        return pessoaRepository.buscarPessoaPeloId(id);
+    }
+
 }

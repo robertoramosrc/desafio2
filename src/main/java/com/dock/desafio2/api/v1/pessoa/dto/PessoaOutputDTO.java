@@ -1,8 +1,9 @@
-package com.dock.desafio2.api.v1.pessoa;
+package com.dock.desafio2.api.v1.pessoa.dto;
 
 import lombok.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -10,8 +11,10 @@ import java.time.LocalDate;
 @Builder
 @EqualsAndHashCode
 @ToString
-public class PessoaInputDTO {
+public class PessoaOutputDTO {
+    private Integer Id;
     private String nome;
     private String cpf;
     private LocalDate dataNascimento;
+    private LocalDateTime dataCriacao;
 }

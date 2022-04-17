@@ -16,5 +16,4 @@ public class PessoaBO {
     private String nome;
     private String cpf;
     private LocalDate dataNascimento;
-    private LocalDateTime dataCriacao;
 }

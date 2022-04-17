@@ -1,5 +1,6 @@
 package com.dock.desafio2.api.v1.pessoa;
 
+import com.dock.desafio2.api.v1.pessoa.dto.PessoaOutputDTO;
 import com.dock.desafio2.service.pessoa.PessoaService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -16,18 +17,19 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping(value = "desafio2/v1")
+@RequestMapping(value = PessoaRest.PESSOA_PATH)
 @AllArgsConstructor
 public class PessoaRest {
+    public static final String PESSOA_PATH = "/desafio2/v1/pessoas";
 
     private final PessoaService pessoaService;
     private final ModelMapper mapper;
 
-    @ApiOperation(value = "Consulta de Pessoas")
+    @ApiOperation(value = "Consulta Pessoas")
 
     @ApiResponses({@ApiResponse(code = 200, message = "OK"),
             @ApiResponse(code = 500, message = "Internal Server Error")})
-    @GetMapping("/pessoas")
+    @GetMapping()
     public ResponseEntity<List<PessoaOutputDTO>> buscarPessoas() {
 
         return ResponseEntity
