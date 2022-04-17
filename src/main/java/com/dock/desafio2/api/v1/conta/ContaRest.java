@@ -11,10 +11,7 @@ import io.swagger.annotations.ApiResponses;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -41,8 +38,22 @@ public class ContaRest {
 
         return status(CREATED)
                 .body(contaConverter.toContaOutputDTO(
-                        contaService.criarConta(contaConverter.toBo(input)))
-                );
+                        contaService.criarConta(contaConverter.toBo(input))));
     }
+
+    @ApiOperation(value = "Bloquear Conta Corrente")
+    @ApiResponses({@ApiResponse(code = 200, message = "OK"),
+            @ApiResponse(code = 500, message = "Internal Server Error")})
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<ContaOutputDTO> bloquearConta(
+            @PathVariable("id") Integer idConta
+    ) {
+
+        return status(CREATED)
+                .body(contaConverter.toContaOutputDTO(
+                        contaService.bloquearConta(idConta)));
+    }
+
 
 }

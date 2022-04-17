@@ -41,4 +41,32 @@ public class ContaService {
     private List<ContaBO> buscarContasPorPessoaETipo(PessoaBO pessoa, Integer tipoConta){
         return contaRepository.buscarContasPorPessoaETipo(pessoa, tipoConta);
     }
+
+    public ContaBO bloquearConta(Integer idConta) {
+        ContaBO conta = buscarContaPorId(idConta);
+
+        validaContaExistente(conta, idConta);
+        validarBloqueioDaConta(conta);
+
+        conta.setFlagAtivo(Boolean.FALSE);
+        return contaRepository.atualizarConta(conta);
+    }
+
+    private void validarBloqueioDaConta(ContaBO conta) {
+        if(!conta.getFlagAtivo()){
+            throw new NegocioException(String.format("Pessoa com id %s já está bloqueada", conta.getPessoa().getId()));
+        }
+    }
+
+    private void validaContaExistente(ContaBO conta, Integer idConta) {
+        if(conta == null) {
+            throw new NegocioException(String.format("Conta de ID %s não cadastrada", idConta));
+        }
+    }
+
+
+        public ContaBO buscarContaPorId(Integer idConta){
+        return contaRepository.buscarContaPorId(idConta);
+    }
+
 }

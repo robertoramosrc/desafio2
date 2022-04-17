@@ -1,16 +1,12 @@
 package com.dock.desafio2.infra.repository.conta.DAO;
 
 import com.dock.desafio2.infra.repository.pessoa.dao.PessoaEntity;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Table(name = "conta")
@@ -18,6 +14,8 @@ import java.util.List;
 @Builder
 @EqualsAndHashCode
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class ContaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

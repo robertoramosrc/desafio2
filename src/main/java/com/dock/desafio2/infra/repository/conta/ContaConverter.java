@@ -19,11 +19,13 @@ public class ContaConverter {
 
     public ContaEntity toEntity(ContaBO bo){
         return  ContaEntity.builder()
+                .id(bo.getId())
                 .tipoConta(bo.getTipoConta().getValor())
                 .limiteSaqueDiario(bo.getLimiteSaqueDiario())
                 .saldo(bo.getSaldo())
                 .pessoa(mapper.map(bo.getPessoa(), PessoaEntity.class))
                 .flagAtivo(bo.getFlagAtivo())
+                .dataCriacao(bo.getDataCriacao())
                 .build();
     }
 

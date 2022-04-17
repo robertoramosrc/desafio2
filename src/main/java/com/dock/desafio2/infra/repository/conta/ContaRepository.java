@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Repository
@@ -56,4 +57,33 @@ public class ContaRepository {
             throw new NegocioException("Erro buscando Contas por idPessoa e tipo de conta - ver log da aplicação para mais detalhes");
         }
     }
+
+    public ContaBO buscarContaPorId(Integer idConta) {
+        try {
+
+            Optional<ContaEntity> contaEntity = contaDAO.findById(idConta);
+            return contaEntity.map(contaConverter::toBo).orElse(null);
+
+
+        } catch (Exception e) {
+            log.error("Erro buscando Contas por id {} {}",
+                    idConta, e.getCause().getMessage());
+
+            throw new NegocioException("Erro buscando Contas por ID - ver log da aplicação para mais detalhes");
+        }
+    }
+
+    public ContaBO atualizarConta(ContaBO conta) {
+        try {
+
+            ContaEntity contaEntity = contaConverter.toEntity(conta);
+
+            return contaConverter.toBo(contaDAO.save(contaEntity));
+
+        } catch (Exception e) {
+            log.error("Erro atualizando Conta {} {}", conta, e.getCause().getMessage());
+            throw new NegocioException("Erro atualizando Conta - ver log da aplicação para mais detalhes");
+        }
+    }
+
 }
