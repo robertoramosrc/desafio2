@@ -26,7 +26,6 @@ public class PessoaRest {
     private final ModelMapper mapper;
 
     @ApiOperation(value = "Consulta Pessoas")
-
     @ApiResponses({@ApiResponse(code = 200, message = "OK"),
             @ApiResponse(code = 500, message = "Internal Server Error")})
     @GetMapping()

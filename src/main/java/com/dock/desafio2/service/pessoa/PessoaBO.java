@@ -3,7 +3,6 @@ package com.dock.desafio2.service.pessoa;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor

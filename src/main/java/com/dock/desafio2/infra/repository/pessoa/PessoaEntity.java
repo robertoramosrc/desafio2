@@ -1,4 +1,4 @@
-package com.dock.desafio2.infra.repository.pessoa.dao;
+package com.dock.desafio2.infra.repository.pessoa;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

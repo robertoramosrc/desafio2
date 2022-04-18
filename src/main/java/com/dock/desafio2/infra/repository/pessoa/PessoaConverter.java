@@ -1,5 +1,6 @@
-package com.dock.desafio2.infra.repository.pessoa.dao;
+package com.dock.desafio2.infra.repository.pessoa;
 
+import com.dock.desafio2.infra.repository.pessoa.PessoaEntity;
 import com.dock.desafio2.service.pessoa.PessoaBO;
 import org.springframework.stereotype.Component;
 

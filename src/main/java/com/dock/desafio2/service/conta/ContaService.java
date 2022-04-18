@@ -53,6 +53,18 @@ public class ContaService {
         return contaRepository.atualizarConta(conta);
     }
 
+    public ContaBO atualizarSaldo(ContaBO conta) {
+        validarMovimentacao(conta);
+        return contaRepository.atualizarConta(conta);
+    }
+
+    private void validarMovimentacao(ContaBO conta) {
+        if (!conta.getFlagAtivo()) {
+            throw new NegocioException(String.format("Conta %s não permite movimentações por estar bloqueada",
+                    conta.getId()));
+        }
+    }
+
     public BigDecimal consultarSaldoDaConta(Integer idConta) {
         ContaBO conta = buscarContaPorId(idConta);
 

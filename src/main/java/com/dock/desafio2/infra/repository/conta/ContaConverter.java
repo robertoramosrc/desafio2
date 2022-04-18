@@ -2,8 +2,7 @@ package com.dock.desafio2.infra.repository.conta;
 
 import com.dock.desafio2.api.v1.conta.dto.ContaInputDTO;
 import com.dock.desafio2.api.v1.conta.dto.ContaOutputDTO;
-import com.dock.desafio2.infra.repository.conta.DAO.ContaEntity;
-import com.dock.desafio2.infra.repository.pessoa.dao.PessoaEntity;
+import com.dock.desafio2.infra.repository.pessoa.PessoaEntity;
 import com.dock.desafio2.service.conta.ContaBO;
 import com.dock.desafio2.service.conta.TipoContaEnum;
 import com.dock.desafio2.service.pessoa.PessoaBO;

@@ -1,12 +1,14 @@
-package com.dock.desafio2.infra.repository.conta.DAO;
+package com.dock.desafio2.infra.repository.conta;
 
-import com.dock.desafio2.infra.repository.pessoa.dao.PessoaEntity;
+import com.dock.desafio2.infra.repository.pessoa.PessoaEntity;
+import com.dock.desafio2.infra.repository.transacao.TransacaoEntity;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "conta")
