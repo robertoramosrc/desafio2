@@ -3,7 +3,6 @@ package com.dock.desafio2.infra.repository.transacao;
 import com.dock.desafio2.api.v1.transacao.dto.LinhaExtrato;
 import com.dock.desafio2.api.v1.transacao.dto.TransacaoInputDTO;
 import com.dock.desafio2.infra.repository.conta.ContaConverter;
-import com.dock.desafio2.infra.repository.transacao.TransacaoEntity;
 import com.dock.desafio2.service.conta.ContaBO;
 import com.dock.desafio2.service.transacao.TipoTransacaoEnum;
 import com.dock.desafio2.service.transacao.TransacaoBO;
@@ -13,6 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 @AllArgsConstructor
 public class TransacaoConverter {
+
     private final ContaConverter contaConverter;
 
     public TransacaoBO toTransacaoBO(TransacaoEntity entity){

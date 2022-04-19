@@ -7,6 +7,7 @@ import com.dock.desafio2.service.conta.ContaBO;
 import com.dock.desafio2.service.conta.TipoContaEnum;
 import com.dock.desafio2.service.pessoa.PessoaBO;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 

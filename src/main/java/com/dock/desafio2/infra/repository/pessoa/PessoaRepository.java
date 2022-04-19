@@ -1,6 +1,6 @@
 package com.dock.desafio2.infra.repository.pessoa;
 
-import com.dock.desafio2.infra.repository.pessoa.dao.PessoaDAO;
+import com.dock.desafio2.infra.repository.pessoa.DAO.PessoaDAO;
 import com.dock.desafio2.service.pessoa.PessoaBO;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;

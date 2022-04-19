@@ -1,8 +1,6 @@
 package com.dock.desafio2.infra.repository.pessoa;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -13,6 +11,9 @@ import java.time.LocalDate;
 @Data
 @EqualsAndHashCode
 @ToString
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class PessoaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
